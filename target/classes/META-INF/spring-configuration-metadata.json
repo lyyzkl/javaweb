@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "aliyun.oss",
+      "type": "top.jwtzkl.backend.utils.AliOSSProperties",
+      "sourceType": "top.jwtzkl.backend.utils.AliOSSProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.oss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "top.jwtzkl.backend.utils.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "top.jwtzkl.backend.utils.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "top.jwtzkl.backend.utils.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "top.jwtzkl.backend.utils.AliOSSProperties"
+    }
+  ],
+  "hints": []
+}
