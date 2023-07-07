@@ -15,7 +15,7 @@ public class SessionController {
     //设置cookie
     @GetMapping("/c1")
     public Result cookie1(HttpServletResponse response){
-        response.addCookie(new Cookie("login_username","itheima")); //设置Cookie/响应Cookie
+        response.addCookie(new  Cookie("login_username","itheima")); //设置Cookie/响应Cookie
         return Result.success();
     }
     //获取Cookie
