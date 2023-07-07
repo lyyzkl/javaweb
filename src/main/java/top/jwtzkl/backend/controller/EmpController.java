@@ -8,6 +8,7 @@ import top.jwtzkl.backend.entity.Emp;
 import top.jwtzkl.backend.entity.PageBean;
 import top.jwtzkl.backend.entity.Result;
 import top.jwtzkl.backend.service.EmpService;
+import top.jwtzkl.backend.utils.XmlParserUtils;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -58,5 +59,34 @@ public class EmpController {
         log.info("更新员工信息 : {}", emp);
         empService.update(emp);
         return Result.success();
+    }
+
+    @RequestMapping("/listmap")
+    public Result listmap(){
+        //加载并且解析xml文件
+        String file = this.getClass().getClassLoader().getResource("emp.xml").getFile();
+        System.out.println(file);
+        List<Emp> list = XmlParserUtils.parse(file, Emp.class);
+        list.stream().forEach(emp->{
+            //处理 gender 1: 男, 2: 女
+//            String gender = emp.getGender();
+//            if("1".equals(gender)){
+//                emp.setGender("男");
+//            }else if("2".equals(gender)){
+//                emp.setGender("女");
+//            }
+
+            //处理job - 1: 讲师, 2: 班主任 , 3: 就业指导
+//            String job = emp.getJob();
+//            if("1".equals(job)){
+//                emp.setJob("讲师");
+//            }else if("2".equals(job)){
+//                emp.setJob("班主任");
+//            }else if("3".equals(job)){
+//                emp.setJob("就业指导");
+//            }
+        });
+        //3. 响应数据
+        return Result.success(list);
     }
 }
